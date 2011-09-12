@@ -133,7 +133,7 @@ void irq_work_run(void)
 	while (list != NULL) {
 		struct irq_work *entry = list;
 
-		list = irq_work_next(list);
+		llnode = llist_next(llnode);
 
 		/*
 		 * Clear the PENDING bit, after this point the @entry
